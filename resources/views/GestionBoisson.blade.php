@@ -13,26 +13,24 @@
         <tr>
             <th>Nom</th>
             <th>Code</th>
-            <th>Edit</th>
-
+            <th>Infos</th>
         </tr>
         </thead>
         <tbody>
-            @foreach( $CAF as $boisson)
-        <tr>
-            <td>{{$boisson -> LIBELLE}}</td>
-            <td>{{$boisson -> CODE}}</td>
-            <td>
-                <a href="#" class="btn btn-xs btn-primary">Edit</a>
-                <a href="#" class="btn btn-xs btn-primary">Infos</a>
+        @foreach ($drinks as $drink)
 
+        <tr>
+            <td>{{$drink -> LIBELLE}}</td>
+            <td>{{$drink -> CODE   }}</td>
+            <td>
+                <a href='/details-boisson/{{$drink->CODE}}' class="btn btn-xs btn-infos">plus d'infos</a>
             </td>
 
 
         </tr>
 
 
-            @endforeach
+        @endforeach
         </tbody>
     </table>
 @endsection

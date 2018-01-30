@@ -7,11 +7,17 @@ use Illuminate\Http\Request;
 
 class DrinkController extends Controller
 {
+
     public function afficherBoisson()
     {
-        $boissons = DB::select('select* from boissons');
-        return view('drinkGesture', ['CAF' => $boissons]);
+        $drinks = DB::table('boissons') -> get();
+        return view('GestionBoisson',['drinks'=>$drinks]);
+    }
+
+    public function afficherDetail($id)
+    {
+        $drinks = DB::select("select * from boissons where `CODE` = '$id' ");
+        return view('Details-boisson', ['drinks' => $drinks]);
 
     }
 }
-

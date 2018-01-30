@@ -21,13 +21,16 @@ Route::get('/drinks', 'DrinkController@afficherBoisson');
 
 
 Route::get('/ingredients', function(){
-    return view('ingGesture');
+    return view('IngGesture');
 });
 
 Route::get('/Commands', function(){
-   return view('CommandGesture');
+   return view('Gestion-Commande');
 });
 
 Route::get('/moneyManage', function(){
     return view('moneyGesture');
 });
+
+Route::get('/details-boisson/{id}', 'DrinkController@afficherDetail');
+
