@@ -10,28 +10,42 @@
 @section('form')
     <table class="table">
         <thead>
-        <tr>
-            <th>Nom</th>
-            <th>Code</th>
-            <th>Infos</th>
-        </tr>
+            <tr>
+                <th>Nom</th>
+                <th>Code</th>
+                <th>Infos</th>
+
+            </tr>
         </thead>
         <tbody>
-        @foreach ($drinks as $drink)
-
-        <tr>
-            <td>{{$drink -> LIBELLE}}</td>
-            <td>{{$drink -> CODE   }}</td>
-            <td>
-                <a href='/details-boisson/{{$drink->CODE}}' class="btn btn-xs btn-infos">plus d'infos</a>
-            </td>
-
+        @foreach ($boissons as $boisson)
+            <tr>
+                    <td>{{$boisson->LIBELLE}}</td>
+                    <td>{{$boisson->CODE  }}</td>
+                <td>
+                        <button><a href='/drink/{{$boisson->CODE}}'>Plus d'infos</a></button>
+                    </td>
 
         </tr>
-
-
         @endforeach
         </tbody>
     </table>
-@endsection
+    <h2>Créer , Editer une boissons</h2>
 
+    <form action ='/drink/create' method = POST>
+        {{ csrf_field() }}
+        <div class="form-group">
+            <label for="formGroupExampleInput">Nom de boissons</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrez le nom de la boissons" name="DrinkName">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Code Produit</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Entrez le code produit" name="Code" maxlength="3">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Prix</label>
+            <input id="number" type="number" class="form-control" id="formGroupExampleInput2" placeholder="Entrez le prix de la boissons " name="DrinkPrice">
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+@endsection

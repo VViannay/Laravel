@@ -1,6 +1,6 @@
 
 html, body {
-    background:url('http://lichfieldsfurniture.co.uk/wp-content/uploads/2016/10/Cafe-background-1.jpg') no-repeat;
+    /*background:url('../../img/1921985d20beadd650de0bc42238ed71.jpg') no-repeat;*/
     background-size: cover;
     color: #636b6f;
     font-family: 'Raleway', sans-serif;
@@ -76,7 +76,8 @@ div.links {
     color: black;
     font-weight: bold;
     margin-top: 80px;
-    border: 2px solid black;
+    border: 1px solid black;
+    padding:20px;
 
 }
 
@@ -85,8 +86,22 @@ th {
     background-color: black;
     color:white;
     font-weight: bold;
+    border: 1px solid black;
 }
 
 td {
     text-align: center;
+}
+
+
+
+form {
+    color:black;
+    font-family: Raleway;
+    font-size: 15px;
+}
+
+input {
+    color: black;
+    font-size: 45px;
 }

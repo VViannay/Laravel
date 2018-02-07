@@ -1,14 +1,16 @@
 @extends('template')
 
-    @foreach( $drinks as $drink)
+@section('titles')
+            <h1>
+                {{$boisson->LIBELLE}}
+            </h1>
 
-        @section('titles')
-            <h1>{{$drink -> LIBELLE}}</h1>
-        @endsection
 
-        @section('subtitle')
-            <p>{{$drink -> CODE}}</p>
-            <p>{{$drink -> PRIX}}</p>
-    @endforeach
+@endsection
 
-        @endsection
+@section('subtitle')
+            <h2><STRONG>Code produit :</STRONG><BR>
+                <p>{{$boisson -> CODE}}</p>
+            </h2>
+                <p>{{$boisson -> PRIX}}</p>
+@endsection
